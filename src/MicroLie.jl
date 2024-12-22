@@ -8,6 +8,7 @@ export qleft, qright
 export spin, unspin
 export adj, qExp, qLog, RLog, jright
 export (⊕), (⊗), (⊖)
+export euler213
 
     
 qfields = (re=1, i=2, j=3, k=4, im=2:4, q=1:4)
@@ -102,5 +103,7 @@ function jright(x::AbstractVector)::AbstractMatrix
         return I(3) + (1-cos(θ)) / θ ^ 2 * spin(x) + (1-cos(θ)) / θ ^ 3  * spin(x) ^ 3
     end
 end
+
+euler213(r::Matrix) = [atan(-r[1,3], r[3,3]), asin(r[2,3]), atan(-r[2,1], r[2,2])] 
 
 end # module MicroLie
