@@ -1,0 +1,11 @@
+name = "MicroLie"
+uuid = "e3cc9ed9-7ddf-44e1-b1e2-a22a6bc23773"
+authors = ["Ali Tlisov <a.tlisov@1440.space>"]
+version = "0.1.0"
+
+[deps]
+LabelledArrays = "2ee39098-c373-598a-b85f-a56591580800"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
+[compat]
+LabelledArrays = "1.16.0"
