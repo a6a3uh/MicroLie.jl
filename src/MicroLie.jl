@@ -100,7 +100,7 @@ function jright(x::AbstractVector)::AbstractMatrix
     if θ ≈ 0
         return I(3)
     else
-        return I(3) - (1-cos(θ)) / θ ^ 2 * spin(x) + (1-sin(θ)) / θ ^ 3  * spin(x) ^ 2
+        return I(3) - (1-cos(θ)) / θ ^ 2 * spin(x) + (θ-sin(θ)) / θ ^ 3  * spin(x) ^ 2
     end
 end
 
