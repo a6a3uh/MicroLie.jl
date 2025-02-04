@@ -81,7 +81,7 @@ function Base.:-(p::QUnitT{T}, q::QUnitT{T})::AbstractVector{T} where T
 end
 
 function Base.conj(q::QUnitT{T}) where T
-    QUnitT{T}([-q.re; q.im])
+    QUnitT{T}([q.re; -q.im])
 end
 
 function RLog(w::AbstractVector)
@@ -100,7 +100,7 @@ function jright(x::AbstractVector)::AbstractMatrix
     if θ ≈ 0
         return I(3)
     else
-        return I(3) + (1-cos(θ)) / θ ^ 2 * spin(x) + (1-cos(θ)) / θ ^ 3  * spin(x) ^ 3
+        return I(3) - (1-cos(θ)) / θ ^ 2 * spin(x) + (1-sin(θ)) / θ ^ 3  * spin(x) ^ 2
     end
 end
 
